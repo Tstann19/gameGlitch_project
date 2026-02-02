@@ -17,10 +17,8 @@ Problems noticed:
  - Hint misled players (says higher when it should be lower)  -- FIXED
  - Can guess out of bounds (should not be able to guess out of bounds) -- FIXED
  - New game button doesn't make a new game (Should reset the game after one game) -- FIXED
- - Score was inconsistent (Displayed score didn't match developer info)
  - Difficulty attempts for guesses didn't match (Difficulty attempts should match display) -- FIXED
  - Range for Easy and Hard were displayed on screen wrong (Easy should have a range of 1 - 20. Hard should have 1 - 50.) -- FIXED
- - Can't press enter after making a guess (Can't use enter key to submit guess.) 
 
 ## 2. How did you use AI as a teammate?
 
@@ -81,7 +79,10 @@ AI did help me in creating the python tests that tests a good majority of cases.
 - What change did you make that finally gave the game a stable secret number?
 
 ---
-
+I think the reason the secret number kept changing within the app was due to a piece of code turning the value of the secret number
+back into a string. I used Copilot and it specified that the code still works but due to that change it could produce behavioral errors.
+Other than that I didn't see nothing that changed the state of the secret number.
+To explain streamlit "reruns" I'd say that, reruns are basically the code going back over all the code to update its features when a button is clicked. State is essentially a variable that changes based on how the user interacts. That state is like switching a game from hard to easy. The application will change based on the state and vice versa.
 
 ## 5. Looking ahead: your developer habits
 
