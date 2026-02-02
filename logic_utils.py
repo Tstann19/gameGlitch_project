@@ -10,7 +10,7 @@ def get_range_for_difficulty(difficulty: str):
         return 1, 50
     return 1, 100
 
-
+#FIX: Checks range boundaries correctly
 def parse_guess(raw: str, low: int, high: int):
     """
     Parse user input into an int guess.
@@ -36,7 +36,7 @@ def parse_guess(raw: str, low: int, high: int):
 
     return True, value, None
 
-
+#FIX: Gives correct hints for all cases
 def check_guess(guess, secret):
     """
     Check the guess against the secret number.
