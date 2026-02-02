@@ -15,7 +15,7 @@ was to guess the answer without the developer info because the hints were mislea
 
 Problems noticed:
  - Hint misled players (says higher when it should be lower)  -- FIXED
- - Can guess out of bounds (should not be able to guess out of bounds)
+ - Can guess out of bounds (should not be able to guess out of bounds) -- FIXED
  - New game button doesn't make a new game (Should reset the game after one game) -- FIXED
  - Score was inconsistent (Displayed score didn't match developer info)
  - Difficulty attempts for guesses didn't match (Difficulty attempts should match display) -- FIXED
@@ -56,8 +56,11 @@ What I rejected:
 - Did AI help you design or understand any tests? How?
 
 ---
+I decided a bug was truly fixed, when I checked the application and it runs as intended without producing more errors. I'm not proficient at pytests so checking the application was easier for me to debug.
 
-I decided a bug was truly fixed, when I checked the application and it runs as intended without producing more errors.
+One test I ran was a combination of manuel and pytest tests for making sure the hints that were given were correct.
+I utilized a good number of python tests to check whether the hints will work when you're in range. I also checked the actual application to make sure the user can see the hints work correctly as well.
+AI did help me in creating the python tests that tests a good majority of cases. Along with examining the problem within app.py at the time of how to fix the hints.
 
 ## 4. What did you learn about Streamlit and state?
 
