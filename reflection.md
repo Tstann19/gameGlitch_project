@@ -14,13 +14,13 @@ was to guess the answer without the developer info because the hints were mislea
 
 
 Problems noticed:
- - Hint misled players (says higher when it should be lower)
+ - Hint misled players (says higher when it should be lower)  -- FIXED
  - Can guess out of bounds (should not be able to guess out of bounds)
- - New game button doesn't make a new game (Should reset the game after one game)
+ - New game button doesn't make a new game (Should reset the game after one game) -- FIXED
  - Score was inconsistent (Displayed score didn't match developer info)
- - Difficulty attempts for guesses didn't match (Difficulty attempts should match display)
- - Range for Easy and Hard were displayed on screen wrong (Easy should have a range of 1 - 20. Hard should have 1 - 50.)
- - Can't press enter after making a guess (Can't use enter key to submit guess.)
+ - Difficulty attempts for guesses didn't match (Difficulty attempts should match display) -- FIXED
+ - Range for Easy and Hard were displayed on screen wrong (Easy should have a range of 1 - 20. Hard should have 1 - 50.) -- FIXED
+ - Can't press enter after making a guess (Can't use enter key to submit guess.) 
 
 ## 2. How did you use AI as a teammate?
 
@@ -31,6 +31,23 @@ Problems noticed:
 ---
 For this project, I utilized Copilot within my VSCODE IDE to assist me.
 
+What I accepted:
+Example from copilot: Reset All Variables and Ensure all session state variables related to the game are reset (attempts, secret, status, history, score).
+if new_game:
+    # Reset all relevant session state variables
+    st.session_state.attempts = 0
+    st.session_state.secret = random.randint(1, 100)
+    st.session_state.status = "playing"  # Reset game status
+    st.session_state.history = []  # Clear guess history
+    st.session_state.score = 0  # Reset score
+    st.success("New game started.")
+    st.experimental_rerun()
+
+I accepted this cause it seemed reasonable and I utilized Agent mode so I could see the changes to the application before commiting to the code.
+Resetting all values would make it easier to have a completely new game than rather the previous code resetting a few values.
+
+What I rejected:
+
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
@@ -40,6 +57,8 @@ For this project, I utilized Copilot within my VSCODE IDE to assist me.
 
 ---
 
+I decided a bug was truly fixed, when I checked the application and it runs as intended without producing more errors.
+
 ## 4. What did you learn about Streamlit and state?
 
 - In your own words, explain why the secret number kept changing in the original app.
@@ -48,9 +67,14 @@ For this project, I utilized Copilot within my VSCODE IDE to assist me.
 
 ---
 
+
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+
+One strategy I want to utilize next time is being able to examine and find problems within the application. I felt that I found a lot of issues that needed to be resolved pretty well so I hope I can do the same for future projects.
+The next time I do such I project I'll curate my language when prompting the AI better. Due to how I wrote the prompt, the AI would not identify the specifc problem I had and would look over every piece of code whether it was apart of what I was asking or not. 
+Through this project, I realized how helpful AI is in recommending fixes as before AI you'd use any information on the internet and he could be revelent but majority was not. I also liked how helpful the AI was when creating tests. Made the repeativeness easier to overcome.
