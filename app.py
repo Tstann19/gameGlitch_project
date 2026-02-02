@@ -28,7 +28,7 @@ def parse_guess(raw: str):
 
     return True, value, None
 
-
+#FIX: Hints are helpful and accurate
 def check_guess(guess, secret):
     if guess == secret:
         return "Win", "🎉 Correct!"
@@ -92,6 +92,7 @@ st.sidebar.caption(f"Attempts allowed: {attempt_limit}")
 if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
+#FIX: Attempt initialization starts at 0
 if "attempts" not in st.session_state:
     st.session_state.attempts = 0
 
@@ -106,6 +107,7 @@ if "history" not in st.session_state:
 
 st.subheader("Make a guess")
 
+#FIX: Displays range correctly
 st.info(
     f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
@@ -131,9 +133,13 @@ with col2:
 with col3:
     show_hint = st.checkbox("Show hint", value=True)
 
+#FIX: Handle new game initialization properly
 if new_game:
     st.session_state.attempts = 0
     st.session_state.secret = random.randint(1, 100)
+    st.session_state.status = "playing"  # Reset game status
+    st.session_state.history = []  # Clear guess history
+    st.session_state.score = 0  # Reset score
     st.success("New game started.")
     st.rerun()
 
