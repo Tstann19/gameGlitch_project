@@ -25,4 +25,4 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📸 Demo
 
-[Insert screenshot of your fixed, winning game here]
+<img width="1512" height="982" alt="Screenshot 2026-02-02 at 2 45 54 AM" src="https://github.com/user-attachments/assets/58670241-72b5-4905-90c5-446493a37280" />
