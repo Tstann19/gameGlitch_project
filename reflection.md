@@ -9,6 +9,18 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   (for example: "the secret number kept changing" or "the hints were backwards").
 
 ---
+The game looked relatively normal when looking at it first glance. However, the first thing I noticed was how hard it 
+was to guess the answer without the developer info because the hints were misleading. There are some other problems I noticed once I actually started checking if everything does as specified.
+
+
+Problems noticed:
+ - Hint misled players (says higher when it should be lower)
+ - Can guess out of bounds (should not be able to guess out of bounds)
+ - New game button doesn't make a new game (Should reset the game after one game)
+ - Score was inconsistent (Displayed score didn't match developer info)
+ - Difficulty attempts for guesses didn't match (Difficulty attempts should match display)
+ - Range for Easy and Hard were displayed on screen wrong (Easy should have a range of 1 - 20. Hard should have 1 - 50.)
+ - Can't press enter after making a guess (Can't use enter key to submit guess.)
 
 ## 2. How did you use AI as a teammate?
 
@@ -17,6 +29,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion you changed or rejected and why.
 
 ---
+For this project, I utilized Copilot within my VSCODE IDE to assist me.
 
 ## 3. Debugging and testing your fixes
 
