@@ -47,6 +47,18 @@ I accepted this cause it seemed reasonable and I utilized Agent mode so I could 
 Resetting all values would make it easier to have a completely new game than rather the previous code resetting a few values.
 
 What I rejected:
+Example from copilot: To enable the "Enter" key to submit the guess, you can use Streamlit's st.form and st.form_submit_button. Here's how you can modify your code:
+
+Form for guess submission
+with st.form(key="guess_form"):
+    guess = st.text_input("Enter your guess:")
+    submit_button = st.form_submit_button("Submit Guess")
+
+if submit_button:
+    # Handle guess submission logic here
+    st.write(f"You guessed: {guess}")
+
+I rejected this AI fix because it does indeed fix the problem of "Being able to submit a guess using the enter key", it creates a completely separate asset the accomplish this. Which is not what I intended when I asked for this problem to be fixed. I intended to improve the already functioning input field that's in the application.
 
 ## 3. Debugging and testing your fixes
 
